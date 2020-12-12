@@ -4,11 +4,12 @@
   "description": "introdution to mongodb",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "author": "idris agboola",
   "license": "ISC",
   "dependencies": {
+    "mocha": "^8.2.1",
     "mongoose": "^5.11.7"
   }
 }

@@ -1,15 +1,11 @@
 const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
-//create schema
-const schema = mongoose.Schema;
-
-const cred = new schema({
+const schema =new Schema({
     name:String,
     password:Number
 })
 
-// create module
+const cred = mongoose.model('auth', schema)
 
-const credentials = mongoose.model('Credentials',cred)
-
-module.exports = credentials
+module.exports = cred
