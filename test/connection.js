@@ -12,3 +12,8 @@ before((done)=>{
         console.log('error occur during the processes........')
     })
 })
+beforeEach((done)=>{
+    mongoose.connection.collections.auths.drop(()=>{
+        done()
+    })
+})
