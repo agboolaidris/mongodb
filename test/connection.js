@@ -1,10 +1,14 @@
 const mongoose = require('mongoose')
+mongoose.Promise = global.Promise
 
 //connect to mongodb
-mongoose.connect('mongodb://localhost/data')
+before((done)=>{
+    mongoose.connect('mongodb://localhost/data')
 
-mongoose.connection.once('open',()=>{
-    console.log('connection successfully.....')
-}).on('error',()=>{
-    console.log('error occur during the processes........')
+    mongoose.connection.once('open',()=>{
+        console.log('connection successfully.....')
+        done()
+    }).on('error',()=>{
+        console.log('error occur during the processes........')
+    })
 })

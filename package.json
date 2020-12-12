@@ -4,7 +4,7 @@
   "description": "introdution to mongodb",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\""
+    "test": "mocha"
   },
   "author": "idris agboola",
   "license": "ISC",

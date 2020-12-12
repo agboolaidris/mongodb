@@ -1,20 +1,18 @@
-// const mocha = require('mocha')
-// const assert = require('assert')
+const mocha = require('mocha')
+const assert = require('assert')
+const cred = require('../module/cred')
+const { endianness } = require('os')
 
+describe('save record',()=>{
+    it('record is save into database',(done)=>{
+        let new_cred = new cred({
+            name:'idris',
+            password:12345
+        })
 
-
-
-// mocha.describe('let look',(done)=>{
-//  it('save cred',()=>{
-//        const cred = new credentials({
-//            name:'Agboola idris',
-//            password: 1234
-//        })
-
-//        cred.save().then(()=>{
-//            assert(cred.isNew === false)
-//            done()
-//        })
-    
-//    }) 
-// })
+        new_cred.save().then(()=>{
+            assert(new_cred.isNew === false )
+            done()
+        })
+    })
+})
