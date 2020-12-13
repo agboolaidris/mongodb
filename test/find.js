@@ -3,33 +3,32 @@ const assert = require('assert')
 const cred = require('../module/cred')
 
 describe('find object in the array',()=>{
-    let creds =new cred({
-        name:'sofiat',
-        password:12121
-    })
+    let creds; 
 
     beforeEach((done)=>{
+       creds = new cred({
+        name:'sofiat',
+        password:12121
+       })
+
      creds.save().then(()=>{
         assert(creds.isNew === false)
         done()
     })
     })
 
-    it('lock for ID',(done)=>{
+    it('lock for ID',()=>{
         cred.findOne({_id:creds._id}).then((result)=>{
             assert(result._id.toString() === creds._id.toString())
-            done()
-        }).catch(done)
-    })
-
-    it('look for sofiat',(done)=>{
-        cred.findOne({name:'sofiat'}).then((result)=>{
-            assert(result.name === 'sofiat')
-            done()
+        
         })
     })
+    it('lock for name',()=>{
+        cred.findOne({_id:creds._id}).then((result)=>{
+            assert(result._id.toString() === creds._id.toString())
+            
+        })
+    })
+    
 
-    console.log('id is = ' + creds._id)
-
-   
 })
