@@ -6,8 +6,8 @@ const { endianness } = require('os')
 describe('save record',()=>{
     it('record is save into database',(done)=>{
         let new_cred = new cred({
-            name:'idris',
-            password:12345
+            name:'bayo',
+            password:654321
         })
 
         new_cred.save().then(()=>{
