@@ -5,7 +5,7 @@ mongoose.Promise = global.Promise
 
 before((done)=>{
     //connect to mongodb
-    mongoose.connect('mongodb://localhost:27017/information',{useNewUrlParser:true, useUnifiedTopology:true})
+    mongoose.connect('mongodb://localhost:27017/information',{useNewUrlParser:true, useUnifiedTopology:true,useFindAndModify:false})
 
     mongoose.connection.once('open',()=>{
         console.log('connection successfully.....')

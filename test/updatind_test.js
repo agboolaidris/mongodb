@@ -7,7 +7,7 @@ describe('update data',()=>{
     beforeEach((done)=>{
         creds = new cred({
             name:'asabi',
-            password:800111
+            password:3
         })
         creds.save().then(()=>{
             done()
@@ -24,4 +24,9 @@ it('update completed',(done)=>{
         })
     
     })
+
+ it('increment by one',(done)=>{
+     cred.update({},{$inc:{password:1}})
+     done()
+ })   
 })
