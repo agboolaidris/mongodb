@@ -1,9 +1,8 @@
 const mocha = require('mocha')
 const assert = require('assert')
 const cred = require('../module/cred')
-const { endianness } = require('os')
 
-describe('save record',()=>{
+ describe('save record',()=>{
     it('record is save into database',(done)=>{
         let new_cred = new cred({
             name:'bayo',
