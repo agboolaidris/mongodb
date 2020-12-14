@@ -3,6 +3,7 @@ const assert = require('assert')
 const cred = require('../module/cred')
 
 describe('find object in the array',()=>{
+   
     let creds; 
 
     beforeEach((done)=>{
@@ -12,7 +13,6 @@ describe('find object in the array',()=>{
        })
 
      creds.save().then(()=>{
-        assert(creds.isNew === false)
         done()
     })
     })
